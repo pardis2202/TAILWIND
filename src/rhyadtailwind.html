@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-white text-black dark:bg-black dark:text-white font-myFont">
+    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+    </button>
+    <header>
+        <nav class="bg-white border-gray-200 dark:bg-gray-900">
+          <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <!-- Logo and Nav Links -->
+            <div class="flex items-center gap-3">
+              <img src="https://www.rahatyad.ir/images/rahatyad_logo.svg" class="w-12" alt="Flowbite Logo" />
+              <div class="hidden md:flex md:space-x-8 rtl:space-x-reverse">
+                <ul class="flex flex-col p-4 gap-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                  <li><a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-[#0DA7EA] md:p-0 md:dark:text-blue-500">صفحه نخست</a></li>
+                  <li><a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">پروژه</a></li>
+                  <li><a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">دوره ها</a></li>
+                  <li><a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">بلاگ</a></li>
+                  <li><a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">درباره ما</a></li>
+                </ul>
+              </div>
+            </div>
+      
+            <!-- Toggle button for mobile view -->
+            <div class="flex md:hidden">
+              <button data-collapse-toggle="navbar-menu" aria-controls="navbar-menu" aria-expanded="false" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+                <span class="sr-only">Open main menu</span>
+              </button>
+            </div>
+      
+            <!-- Search input and Login button (always visible) -->
+            <div class="flex md:order-2">
+              <div class="relative hidden md:block">
+                <input type="text" id="search-navbar-desktop" class="block w-full p-3 pr-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="چی میخوای یاد بگیری؟">
+                <div class="absolute inset-y-0 end-0 flex items-center pe-2 pointer-events-none">
+                  <div class="bg-white border-2 shadow-sm p-2 rounded-lg">
+                    <svg class="w-5 h-4 text-[#0DA7EA] dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+      
+              <button class="btn btn-white border-2 rounded-lg shadow-md ms-5 px-3 py-1 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" viewBox="0 0 36 36"><path fill="#0CA6EA" d="M18 17a7 7 0 1 0-7-7a7 7 0 0 0 7 7m0-12a5 5 0 1 1-5 5a5 5 0 0 1 5-5" class="clr-i-outline clr-i-outline-path-1"/><path fill="#0CA6EA" d="M30.47 24.37a17.16 17.16 0 0 0-24.93 0A2 2 0 0 0 5 25.74V31a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2v-5.26a2 2 0 0 0-.53-1.37M29 31H7v-5.27a15.17 15.17 0 0 1 22 0Z" class="clr-i-outline clr-i-outline-path-2"/><path fill="none" d="M0 0h36v36H0z"/></svg>ورود / ثبت نام</button>
+            </div>
+      
+            <!-- Collapsible menu for mobile view -->
+            <div class="hidden w-full md:hidden" id="navbar-menu">
+              <ul class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+                <li><a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-[#0DA7EA] md:p-0 md:dark:text-blue-500">صفحه نخست</a></li>
+                <li><a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">پروژه</a></li>
+                <li><a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">دوره ها</a></li>
+                <li><a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">بلاگ</a></li>
+                <li><a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">درباره ما</a></li>
+              </ul>
+              <div class="relative mt-3">
+                <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="چی میخوای یاد بگیری؟">
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      
+
+    <main class="justify-center mt-5">
+    <section class="flex mt-2 items-center sm:justify-center">
+        <div class="mt-5">
+            <div class="flex gap-3">
+                <h2 class="text-4xl">برنامه نویسی با</h2> <h2 class="text-[#00A2E9] text-4xl">راحت</h2>   <h2 class="text-[#ACCE22] text-4xl">یاد</h2>  
+            </div>
+            <h5 class="font-bold">انجام پروژه های بین المللی با بهترین کیفیت</h5>
+            <p>برگزاری انواع دوره ها با بهترین اساتید</p>
+
+            <section class="flex gap-4 mt-4">
+                <div class=" shadow-lg border rounded-lg p-5">
+                    <div class="items-center rounded-lg bg-[#E6FAFD] p-2"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 12 12"><path fill="#039BE5" d="M6.84 2.189a1.96 1.96 0 0 0-1.68 0L.286 4.498A.5.5 0 0 0 0 4.976v3.026a.5.5 0 1 0 1 0V5.756l1 .496v2.75a.5.5 0 0 0 .147.354l.025.024l.06.055q.075.072.217.188c.187.153.457.355.794.558c.67.401 1.634.82 2.757.82s2.088-.419 2.757-.82a6.7 6.7 0 0 0 1.012-.746l.06-.055l.023-.024h.002A.5.5 0 0 0 10 9.001v-2.75l1.722-.854a.5.5 0 0 0-.008-.9zm.032 5.615L9 6.748V8.78l-.082.07a6 6 0 0 1-.675.473c-.58.348-1.366.679-2.243.679s-1.662-.33-2.243-.679A6 6 0 0 1 3 8.78V6.748l2.128 1.056c.55.272 1.194.272 1.744 0m-.46-4.711l3.942 1.867l-3.927 1.948a.96.96 0 0 1-.854 0L1.646 4.96l3.942-1.867a.96.96 0 0 1 .824 0M2.149 9.358"/></svg></div>
+                     <p class="mt-2">دوره ها</p>
+                </div>
+                <div class="shadow-lg border rounded-lg p-5 ">
+                    <div class="items-center justify-center text-center rounded-lg bg-[#E6FAFD] p-2"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="#039BE5" fill-rule="evenodd" d="M15 1.25h-4.056c-1.838 0-3.294 0-4.433.153c-1.172.158-2.121.49-2.87 1.238c-.748.749-1.08 1.698-1.238 2.87c-.153 1.14-.153 2.595-.153 4.433V16a3.751 3.751 0 0 0 3.166 3.705c.137.764.402 1.416.932 1.947c.602.602 1.36.86 2.26.982c.867.116 1.97.116 3.337.116h3.11c1.367 0 2.47 0 3.337-.116c.9-.122 1.658-.38 2.26-.982c.602-.602.86-1.36.982-2.26c.116-.867.116-1.97.116-3.337v-5.11c0-1.367 0-2.47-.116-3.337c-.122-.9-.38-1.658-.982-2.26c-.531-.53-1.183-.795-1.947-.932A3.751 3.751 0 0 0 15 1.25m2.13 3.021A2.25 2.25 0 0 0 15 2.75h-4c-1.907 0-3.261.002-4.29.14c-1.005.135-1.585.389-2.008.812c-.423.423-.677 1.003-.812 2.009c-.138 1.028-.14 2.382-.14 4.289v6a2.25 2.25 0 0 0 1.521 2.13c-.021-.61-.021-1.3-.021-2.075v-5.11c0-1.367 0-2.47.117-3.337c.12-.9.38-1.658.981-2.26c.602-.602 1.36-.86 2.26-.981c.867-.117 1.97-.117 3.337-.117h3.11c.775 0 1.464 0 2.074.021M7.408 6.41c.277-.277.665-.457 1.4-.556c.754-.101 1.756-.103 3.191-.103h3c1.435 0 2.436.002 3.192.103c.734.099 1.122.28 1.399.556c.277.277.457.665.556 1.4c.101.754.103 1.756.103 3.191v5c0 1.435-.002 2.436-.103 3.192c-.099.734-.28 1.122-.556 1.399c-.277.277-.665.457-1.4.556c-.755.101-1.756.103-3.191.103h-3c-1.435 0-2.437-.002-3.192-.103c-.734-.099-1.122-.28-1.399-.556c-.277-.277-.457-.665-.556-1.4c-.101-.755-.103-1.756-.103-3.191v-5c0-1.435.002-2.437.103-3.192c.099-.734.28-1.122.556-1.399" clip-rule="evenodd"/></svg></div>
+                    <p class="mt-2">
+                        160مقاله</p>
+                </div>
+                <div class="shadow-lg border rounded-lg p-5">
+                    <div class="items-center justify-center text-center rounded-lg bg-[#E6FAFD] p-2"><svg class="bg-self" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 56 56"><path fill="#039BE5" d="M14.559 51.953h27.586c4.218 0 6.656-2.437 6.656-7.266V20.43c0-4.828-2.461-7.266-7.36-7.266h-3.726c-.14-4.922-4.406-9.117-9.703-9.117c-5.32 0-9.586 4.195-9.727 9.117H14.56c-4.875 0-7.36 2.414-7.36 7.266v24.258c0 4.851 2.485 7.265 7.36 7.265M28.012 7.61c3.304 0 5.812 2.485 5.93 5.555h-11.86c.094-3.07 2.602-5.555 5.93-5.555M14.629 48.18c-2.344 0-3.656-1.242-3.656-3.679V20.617c0-2.437 1.312-3.68 3.656-3.68h26.766c2.296 0 3.632 1.243 3.632 3.68V44.5c0 2.438-1.336 3.68-2.953 3.68Z"/></svg></div>
+                    <p class="mt-2">
+                        بازار کار
+                    </p>
+                </div>
+                <div class="shadow-lg border rounded-lg p-5">
+                    <div class="items-center justify-center text-center rounded-lg bg-[#E6FAFD] p-2"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><g fill="none"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="#039BE5" d="M20 11.943C20 7.562 16.424 4 12 4c-4.424 0-8 3.562-8 7.943c0 1.19.147 1.955.328 2.516c.122.372.413.005.557-.13a2.5 2.5 0 0 1 3.472.05c1.421 1.412 2.732 3.37.921 5.17c-.972.966-2.436 1.368-3.55.328c-1.438-1.344-2.687-2.908-3.302-4.8C2.17 14.283 2 13.304 2 11.942C2 6.445 6.483 2 12 2s10 4.445 10 9.943c0 1.362-.169 2.341-.426 3.133c-.615 1.893-1.864 3.457-3.302 4.8c-1.114 1.041-2.578.64-3.55-.327c-1.81-1.8-.5-3.758.92-5.17a2.5 2.5 0 0 1 3.473-.05c.277.26.414.57.557.13c.181-.56.328-1.327.328-2.516"/></g></svg></div>
+                    <p class="mt-2">
+                        پشتیبانی
+                    </p>
+                </div>
+             </section>
+        </div>
+
+        <div class="sm:hidden md:block mt-5" style="margin-right: 400px;">
+            <img width="350px" height="300px" src="./Screenshot 2024-02-02 224839.png" alt="">
+        </div>
+    </section>
+
+    <div class="mt-3 flex justify-between">
+        <h3 class="flex items-center ms-3 text-3xl gap-2">
+            <img src="https://www.rahatyad.ir/images/titricon.png" alt="">
+            دوره ها
+        </h3>
+        <a class="text-decoration-none mt-3 me-3 text-[#4A6EFD]" href="">بیشتر</a>
+     </div>
+     <section class="flex flex-wrap justify-center gap-4 mt-10">
+        <!-- Figma -->
+        <div class=" border rounded-lg shadow-md mt-5 w-80 h-90">
+            <img class="w-72 h-50 rounded ms-4"  style="margin-top: -50px;" src="https://www.rahatyad.ir/images/Figma.png" alt="Figma Course">
+            <p class="text-black text-xs flex items-center mt-3 ms-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="#DC3545"><path d="M8 4q.55 0 1.063.145a3.94 3.94 0 0 1 1.762 1.031a3.94 3.94 0 0 1 1.03 1.762Q12 7.448 12 8q0 .55-.145 1.063a3.94 3.94 0 0 1-1.03 1.765a4 4 0 0 1-1.762 1.031Q8.55 12 8 12c-.55 0-.721-.047-1.063-.14a4.06 4.06 0 0 1-1.765-1.032A4.06 4.06 0 0 1 4.14 9.062A4 4 0 0 1 4 8q0-.55.14-1.063a4 4 0 0 1 .407-.953A4.1 4.1 0 0 1 5.98 4.546a4 4 0 0 1 .957-.401A4 4 0 0 1 8 4"/></svg> در حال ضبط</p>
+            <h4 class="text-lg font-semibold mt-4 ms-2">دوره جامع آموزش فیگما</h4>
+            <a href="#" class="text-[#00A2EA] flex items-center mt-2 justify-center">مشاهده <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="16" r="4"/><circle cx="6" cy="16" r="4"/><path stroke-linecap="round" d="m14 16.214l-.656-.234a3.999 3.999 0 0 0-2.688 0l-.656.234M2 16l.763-8.395c.115-1.264.173-1.896.543-2.363c.37-.467.972-.668 2.176-1.07L6 4m16 12l-.763-8.395c-.115-1.264-.172-1.896-.542-2.363c-.37-.467-.973-.668-2.177-1.07L18 4"/></g></svg></a>
+            <div class="mt-2">
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" fill="currentColor"><path d="M237.28 97.87A14.18 14.18 0 0 0 224.76 88l-60.25-4.87l-23.22-56.2a14.37 14.37 0 0 0-26.58 0L91.49 83.11L31.24 88a14.18 14.18 0 0 0-12.52 9.89A14.43 14.43 0 0 0 23 113.32l46 39.61l-14 59.25a14.4 14.4 0 0 0 5.59 15a14.1 14.1 0 0 0 15.91.6l51.5-31.66l51.58 31.71a14.1 14.1 0 0 0 15.91-.6a14.4 14.4 0 0 0 5.59-15l-14-59.25L233 113.32a14.43 14.43 0 0 0 4.28-15.45m-12.14 6.37l-48.69 42a6 6 0 0 0-1.92 5.92l14.88 62.79a2.35 2.35 0 0 1-.95 2.57a2.24 2.24 0 0 1-2.6.1L131.14 184a6 6 0 0 0-6.28 0l-54.72 33.61a2.24 2.24 0 0 1-2.6-.1a2.35 2.35 0 0 1-1-2.57l14.88-62.79a6 6 0 0 0-1.92-5.92l-48.69-42a2.37 2.37 0 0 1-.73-2.65a2.28 2.28 0 0 1 2.07-1.65l63.92-5.16a6 6 0 0 0 5.06-3.69l24.63-59.6a2.35 2.35 0 0 1 4.38 0l24.63 59.6a6 6 0 0 0 5.06 3.69l63.92 5.16a2.28 2.28 0 0 1 2.07 1.65a2.37 2.37 0 0 1-.68 2.66"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class=" bg-[#F7F7F7] w-full h-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300 "></div>
+                    <div class="mt-2 flex justify-between p-2">
+                        <p class="flex items-center text-[#4FC1F1] text-xs">1:00:00<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8"/></svg></p>
+                        <p class="text-[#AFCE22]">رایگان</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Matlab -->
+        <div class=" border rounded-lg shadow-md md:mt-5 mt-12  w-80 h-90">
+            <img class="w-72 h-50 rounded ms-4"  style="margin-top: -50px;" src="https://www.rahatyad.ir/images/MATLAB.png" alt="Figma Course">
+            <p class="text-black text-xs flex items-center mt-3 ms-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="#DC3545"><path d="M8 4q.55 0 1.063.145a3.94 3.94 0 0 1 1.762 1.031a3.94 3.94 0 0 1 1.03 1.762Q12 7.448 12 8q0 .55-.145 1.063a3.94 3.94 0 0 1-1.03 1.765a4 4 0 0 1-1.762 1.031Q8.55 12 8 12c-.55 0-.721-.047-1.063-.14a4.06 4.06 0 0 1-1.765-1.032A4.06 4.06 0 0 1 4.14 9.062A4 4 0 0 1 4 8q0-.55.14-1.063a4 4 0 0 1 .407-.953A4.1 4.1 0 0 1 5.98 4.546a4 4 0 0 1 .957-.401A4 4 0 0 1 8 4"/></svg>  تکمیل شده</p>
+            <h4 class="text-lg font-semibold mt-4 ms-2">دوره آموزش جامع متلب</h4>
+            <a href="#" class="text-[#00A2EA] flex items-center mt-2 justify-center">مشاهده <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="16" r="4"/><circle cx="6" cy="16" r="4"/><path stroke-linecap="round" d="m14 16.214l-.656-.234a3.999 3.999 0 0 0-2.688 0l-.656.234M2 16l.763-8.395c.115-1.264.173-1.896.543-2.363c.37-.467.972-.668 2.176-1.07L6 4m16 12l-.763-8.395c-.115-1.264-.172-1.896-.542-2.363c-.37-.467-.973-.668-2.177-1.07L18 4"/></g></svg></a>
+            <div class="mt-2">
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" fill="currentColor"><path d="M237.28 97.87A14.18 14.18 0 0 0 224.76 88l-60.25-4.87l-23.22-56.2a14.37 14.37 0 0 0-26.58 0L91.49 83.11L31.24 88a14.18 14.18 0 0 0-12.52 9.89A14.43 14.43 0 0 0 23 113.32l46 39.61l-14 59.25a14.4 14.4 0 0 0 5.59 15a14.1 14.1 0 0 0 15.91.6l51.5-31.66l51.58 31.71a14.1 14.1 0 0 0 15.91-.6a14.4 14.4 0 0 0 5.59-15l-14-59.25L233 113.32a14.43 14.43 0 0 0 4.28-15.45m-12.14 6.37l-48.69 42a6 6 0 0 0-1.92 5.92l14.88 62.79a2.35 2.35 0 0 1-.95 2.57a2.24 2.24 0 0 1-2.6.1L131.14 184a6 6 0 0 0-6.28 0l-54.72 33.61a2.24 2.24 0 0 1-2.6-.1a2.35 2.35 0 0 1-1-2.57l14.88-62.79a6 6 0 0 0-1.92-5.92l-48.69-42a2.37 2.37 0 0 1-.73-2.65a2.28 2.28 0 0 1 2.07-1.65l63.92-5.16a6 6 0 0 0 5.06-3.69l24.63-59.6a2.35 2.35 0 0 1 4.38 0l24.63 59.6a6 6 0 0 0 5.06 3.69l63.92 5.16a2.28 2.28 0 0 1 2.07 1.65a2.37 2.37 0 0 1-.68 2.66"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class=" bg-[#F7F7F7] w-full h-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300 "></div>
+                    <div class="mt-2 flex justify-between p-2">
+                        <p class="flex items-center text-[#4FC1F1] text-xs">8:57:30<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8"/></svg></p>
+                        <p class="text-[#AFCE22]">رایگان</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- CSSHTML -->
+        <div class=" border rounded-lg shadow-md md:mt-5 mt-12 w-80 h-90">
+            <img class="w-72 h-50 rounded ms-4"  style="margin-top: -50px;" src="https://www.rahatyad.ir/images/CSSHTML.png" alt="Figma Course">
+            <p class="text-black text-xs flex items-center mt-3 ms-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="#DC3545"><path d="M8 4q.55 0 1.063.145a3.94 3.94 0 0 1 1.762 1.031a3.94 3.94 0 0 1 1.03 1.762Q12 7.448 12 8q0 .55-.145 1.063a3.94 3.94 0 0 1-1.03 1.765a4 4 0 0 1-1.762 1.031Q8.55 12 8 12c-.55 0-.721-.047-1.063-.14a4.06 4.06 0 0 1-1.765-1.032A4.06 4.06 0 0 1 4.14 9.062A4 4 0 0 1 4 8q0-.55.14-1.063a4 4 0 0 1 .407-.953A4.1 4.1 0 0 1 5.98 4.546a4 4 0 0 1 .957-.401A4 4 0 0 1 8 4"/></svg> در حال ضبط</p>
+            <h4 class="text-lg font-semibold mt-4 ms-2">آموزش جامع HTML CSS</h4>
+            <a href="#" class="text-[#00A2EA] flex items-center mt-2 justify-center">مشاهده <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="16" r="4"/><circle cx="6" cy="16" r="4"/><path stroke-linecap="round" d="m14 16.214l-.656-.234a3.999 3.999 0 0 0-2.688 0l-.656.234M2 16l.763-8.395c.115-1.264.173-1.896.543-2.363c.37-.467.972-.668 2.176-1.07L6 4m16 12l-.763-8.395c-.115-1.264-.172-1.896-.542-2.363c-.37-.467-.973-.668-2.177-1.07L18 4"/></g></svg></a>
+            <div class="mt-2">
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" fill="currentColor"><path d="M237.28 97.87A14.18 14.18 0 0 0 224.76 88l-60.25-4.87l-23.22-56.2a14.37 14.37 0 0 0-26.58 0L91.49 83.11L31.24 88a14.18 14.18 0 0 0-12.52 9.89A14.43 14.43 0 0 0 23 113.32l46 39.61l-14 59.25a14.4 14.4 0 0 0 5.59 15a14.1 14.1 0 0 0 15.91.6l51.5-31.66l51.58 31.71a14.1 14.1 0 0 0 15.91-.6a14.4 14.4 0 0 0 5.59-15l-14-59.25L233 113.32a14.43 14.43 0 0 0 4.28-15.45m-12.14 6.37l-48.69 42a6 6 0 0 0-1.92 5.92l14.88 62.79a2.35 2.35 0 0 1-.95 2.57a2.24 2.24 0 0 1-2.6.1L131.14 184a6 6 0 0 0-6.28 0l-54.72 33.61a2.24 2.24 0 0 1-2.6-.1a2.35 2.35 0 0 1-1-2.57l14.88-62.79a6 6 0 0 0-1.92-5.92l-48.69-42a2.37 2.37 0 0 1-.73-2.65a2.28 2.28 0 0 1 2.07-1.65l63.92-5.16a6 6 0 0 0 5.06-3.69l24.63-59.6a2.35 2.35 0 0 1 4.38 0l24.63 59.6a6 6 0 0 0 5.06 3.69l63.92 5.16a2.28 2.28 0 0 1 2.07 1.65a2.37 2.37 0 0 1-.68 2.66"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class=" bg-[#F7F7F7] w-full h-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300 "></div>
+                    <div class="mt-2 flex justify-between p-2">
+                        <p class="flex items-center text-[#4FC1F1] text-xs">6:50:30<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8"/></svg></p>
+                       <div class="flex gap-2 text-xs">
+                        <p class="text-[#DC3545] line-through">590,000</p>
+                        <p>390,000</p>
+                        <p class="text-[#AFCE22]">تومان</p>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap -->
+        <div class=" border rounded-lg shadow-md md:mt-5 mt-12 w-80 h-90">
+            <img class="w-72 h-50 rounded ms-4"  style="margin-top: -50px;" src="https://www.rahatyad.ir/images/Bootstrap.png" alt="Figma Course">
+            <p class="text-black text-xs flex items-center mt-3 ms-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="#DC3545"><path d="M8 4q.55 0 1.063.145a3.94 3.94 0 0 1 1.762 1.031a3.94 3.94 0 0 1 1.03 1.762Q12 7.448 12 8q0 .55-.145 1.063a3.94 3.94 0 0 1-1.03 1.765a4 4 0 0 1-1.762 1.031Q8.55 12 8 12c-.55 0-.721-.047-1.063-.14a4.06 4.06 0 0 1-1.765-1.032A4.06 4.06 0 0 1 4.14 9.062A4 4 0 0 1 4 8q0-.55.14-1.063a4 4 0 0 1 .407-.953A4.1 4.1 0 0 1 5.98 4.546a4 4 0 0 1 .957-.401A4 4 0 0 1 8 4"/></svg> در حال ضبط</p>
+            <h4 class="text-lg font-semibold mt-4 ms-2">آموزش جامع بوت استرپ5</h4>
+            <a href="#" class="text-[#00A2EA] flex items-center mt-2 justify-center">مشاهده <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="16" r="4"/><circle cx="6" cy="16" r="4"/><path stroke-linecap="round" d="m14 16.214l-.656-.234a3.999 3.999 0 0 0-2.688 0l-.656.234M2 16l.763-8.395c.115-1.264.173-1.896.543-2.363c.37-.467.972-.668 2.176-1.07L6 4m16 12l-.763-8.395c-.115-1.264-.172-1.896-.542-2.363c-.37-.467-.973-.668-2.177-1.07L18 4"/></g></svg></a>
+            <div class="mt-2">
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class=" bg-[#F7F7F7] w-full h-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300 "></div>
+                    <div class="mt-2 flex justify-between p-2">
+                        <p class="flex items-center text-[#4FC1F1] text-xs">10:50:30<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8"/></svg></p>
+                       <div class="flex gap-2 text-xs">
+                        <p class="text-[#DC3545] line-through">490,000</p>
+                        <p>440,000 </p>
+                        <p class="text-[#AFCE22]">تومان</p>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- JS -->
+        <div class=" border rounded-lg shadow-md mt-14  w-80 h-90">
+            <img class="w-72 h-50 rounded ms-4"  style="margin-top: -50px;" src="https://www.rahatyad.ir/images/JS.png" alt="Figma Course">
+            <p class="text-black text-xs flex items-center mt-3 ms-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="#DC3545"><path d="M8 4q.55 0 1.063.145a3.94 3.94 0 0 1 1.762 1.031a3.94 3.94 0 0 1 1.03 1.762Q12 7.448 12 8q0 .55-.145 1.063a3.94 3.94 0 0 1-1.03 1.765a4 4 0 0 1-1.762 1.031Q8.55 12 8 12c-.55 0-.721-.047-1.063-.14a4.06 4.06 0 0 1-1.765-1.032A4.06 4.06 0 0 1 4.14 9.062A4 4 0 0 1 4 8q0-.55.14-1.063a4 4 0 0 1 .407-.953A4.1 4.1 0 0 1 5.98 4.546a4 4 0 0 1 .957-.401A4 4 0 0 1 8 4"/></svg> در حال ضبط</p>
+            <h4 class="text-lg font-semibold mt-4 ms-2">آموزش جامع جاوااسکریپت</h4>
+            <a href="#" class="text-[#00A2EA] flex items-center mt-2 justify-center">مشاهده <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="16" r="4"/><circle cx="6" cy="16" r="4"/><path stroke-linecap="round" d="m14 16.214l-.656-.234a3.999 3.999 0 0 0-2.688 0l-.656.234M2 16l.763-8.395c.115-1.264.173-1.896.543-2.363c.37-.467.972-.668 2.176-1.07L6 4m16 12l-.763-8.395c-.115-1.264-.172-1.896-.542-2.363c-.37-.467-.973-.668-2.177-1.07L18 4"/></g></svg></a>
+            <div class="mt-2">
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class=" bg-[#F7F7F7] w-full h-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300 "></div>
+                    <div class="mt-2 flex justify-between p-2">
+                        <p class="flex items-center text-[#4FC1F1] text-xs">6:50:30<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8"/></svg></p>
+                       <div class="flex gap-2 text-xs">
+                        <p class="text-[#DC3545] line-through">890,000</p>
+                        <p>800,000</p>
+                        <p class="text-[#AFCE22]">تومان</p>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sass -->
+        <div class=" border rounded-lg shadow-md mt-14  w-80 h-90">
+            <img class="w-72 h-50 rounded ms-4"  style="margin-top: -50px;" src="https://www.rahatyad.ir/images/Sass.png" alt="Figma Course">
+            <p class="text-black text-xs flex items-center mt-3 ms-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="#DC3545"><path d="M8 4q.55 0 1.063.145a3.94 3.94 0 0 1 1.762 1.031a3.94 3.94 0 0 1 1.03 1.762Q12 7.448 12 8q0 .55-.145 1.063a3.94 3.94 0 0 1-1.03 1.765a4 4 0 0 1-1.762 1.031Q8.55 12 8 12c-.55 0-.721-.047-1.063-.14a4.06 4.06 0 0 1-1.765-1.032A4.06 4.06 0 0 1 4.14 9.062A4 4 0 0 1 4 8q0-.55.14-1.063a4 4 0 0 1 .407-.953A4.1 4.1 0 0 1 5.98 4.546a4 4 0 0 1 .957-.401A4 4 0 0 1 8 4"/></svg> در حال ضبط</p>
+            <h4 class="text-lg font-semibold mt-4 ms-2">دوره جامع آموزش Sass</h4>
+            <a href="#" class="text-[#00A2EA] flex items-center mt-2 justify-center">مشاهده <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="16" r="4"/><circle cx="6" cy="16" r="4"/><path stroke-linecap="round" d="m14 16.214l-.656-.234a3.999 3.999 0 0 0-2.688 0l-.656.234M2 16l.763-8.395c.115-1.264.173-1.896.543-2.363c.37-.467.972-.668 2.176-1.07L6 4m16 12l-.763-8.395c-.115-1.264-.172-1.896-.542-2.363c-.37-.467-.973-.668-2.177-1.07L18 4"/></g></svg></a>
+            <div class="mt-2">
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class=" bg-[#F7F7F7] w-full h-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300 "></div>
+                    <div class="mt-2 flex justify-between p-2">
+                        <p class="flex items-center text-[#4FC1F1] text-xs">6:50:30<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8"/></svg></p>
+                       <div class="flex gap-2 text-xs">
+                        <p class="text-[#DC3545] line-through">250,000 </p>
+                        <p>220,000 </p>
+                        <p class="text-[#AFCE22]">تومان</p>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- C course -->
+        <div class=" border rounded-lg shadow-md mt-14  w-80 h-90">
+            <img class="w-72 h-50 rounded ms-4"  style="margin-top: -50px;" src="https://www.rahatyad.ir/images/CCourse.png" alt="Figma Course">
+            <p class="text-black text-xs flex items-center mt-3 ms-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="#DC3545"><path d="M8 4q.55 0 1.063.145a3.94 3.94 0 0 1 1.762 1.031a3.94 3.94 0 0 1 1.03 1.762Q12 7.448 12 8q0 .55-.145 1.063a3.94 3.94 0 0 1-1.03 1.765a4 4 0 0 1-1.762 1.031Q8.55 12 8 12c-.55 0-.721-.047-1.063-.14a4.06 4.06 0 0 1-1.765-1.032A4.06 4.06 0 0 1 4.14 9.062A4 4 0 0 1 4 8q0-.55.14-1.063a4 4 0 0 1 .407-.953A4.1 4.1 0 0 1 5.98 4.546a4 4 0 0 1 .957-.401A4 4 0 0 1 8 4"/></svg> تکمیل شده</p>
+            <h4 class="text-lg font-semibold mt-4 ms-2">دوره جامع آموزش زبان C</h4>
+            <a href="#" class="text-[#00A2EA] flex items-center mt-2 justify-center">مشاهده <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="18" cy="16" r="4"/><circle cx="6" cy="16" r="4"/><path stroke-linecap="round" d="m14 16.214l-.656-.234a3.999 3.999 0 0 0-2.688 0l-.656.234M2 16l.763-8.395c.115-1.264.173-1.896.543-2.363c.37-.467.972-.668 2.176-1.07L6 4m16 12l-.763-8.395c-.115-1.264-.172-1.896-.542-2.363c-.37-.467-.973-.668-2.177-1.07L18 4"/></g></svg></a>
+            <div class="mt-2">
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class=" bg-[#F7F7F7] w-full h-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300 "></div>
+                    <div class="mt-2 flex justify-between p-2">
+                        <p class="flex items-center text-[#4FC1F1] text-xs">6:50:30<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m0 192a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88m64-88a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 8 8"/></svg></p>
+                        <p class="text-[#AFCE22]">رایگان</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    </section>
+    <div class="mt-3 flex justify-between">
+        <h3 class="flex items-center ms-3 text-3xl gap-2">
+            <img src="https://www.rahatyad.ir/images/titricon.png" alt="">
+            کتاب ها
+        </h3>
+        <a class="text-decoration-none mt-3 me-3 text-[#4A6EFD]" href="">بیشتر</a>
+     </div>
+     <section class="flex flex-wrap justify-center gap-4 mt-5">
+        <!-- Java book -->
+        <div class="border rounded-lg shadow-md mt-14 w-80" style="height: 350px;">
+            <img class="w-72 h-48 rounded ms-4" style="margin-top: -50px;" src="https://www.rahatyad.ir/Photos/Home/Images/IMG_5756.png" alt="Figma Course">
+            <h4 class="text-lg font-semibold mt-4 ms-2">جاوااسکریپت حرفه‌ای</h4>
+            <a href="#" class="btn bg-[#0DCAF0] text-white w-4/5 ms-8 p-2 rounded-lg flex items-center mt-4 justify-center">خرید</a>
+            
+            <!-- Star Ratings -->
+            <div class="flex space-x-1 text-[#FFC107] ms-2 mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" fill="currentColor"><path d="M237.28 97.87A14.18 14.18 0 0 0 224.76 88l-60.25-4.87l-23.22-56.2a14.37 14.37 0 0 0-26.58 0L91.49 83.11L31.24 88a14.18 14.18 0 0 0-12.52 9.89A14.43 14.43 0 0 0 23 113.32l46 39.61l-14 59.25a14.4 14.4 0 0 0 5.59 15a14.1 14.1 0 0 0 15.91.6l51.5-31.66l51.58 31.71a14.1 14.1 0 0 0 15.91-.6a14.4 14.4 0 0 0 5.59-15l-14-59.25L233 113.32a14.43 14.43 0 0 0 4.28-15.45m-12.14 6.37l-48.69 42a6 6 0 0 0-1.92 5.92l14.88 62.79a2.35 2.35 0 0 1-.95 2.57a2.24 2.24 0 0 1-2.6.1L131.14 184a6 6 0 0 0-6.28 0l-54.72 33.61a2.24 2.24 0 0 1-2.6-.1a2.35 2.35 0 0 1-1-2.57l14.88-62.79a6 6 0 0 0-1.92-5.92l-48.69-42a2.37 2.37 0 0 1-.73-2.65a2.28 2.28 0 0 1 2.07-1.65l63.92-5.16a6 6 0 0 0 5.06-3.69l24.63-59.6a2.35 2.35 0 0 1 4.38 0l24.63 59.6a6 6 0 0 0 5.06 3.69l63.92 5.16a2.28 2.28 0 0 1 2.07 1.65a2.37 2.37 0 0 1-.68 2.66"/></svg>
+            </div>
+            <div class="w-full h-px bg-gray-300 mt-2"></div>
+            <div class="bg-[#F7F7F7] w-full rounded-b-lg pt-4">
+                <div class="w-4/5 ms-10 h-px bg-gray-300"></div>
+                <div class="mt-2 flex justify-center p-2">
+                    <p class="text-[#DC3545]">350,000 تومان</p>
+                </div>
+            </div>
+        </div>
+           <!-- Bootstrap&Sass book -->
+            <div class="border rounded-lg shadow-md mt-14 w-80" style="height: 350px;">
+                <img class="w-72 h-48 rounded ms-4" style="margin-top: -50px;" src="https://www.rahatyad.ir/Photos/Home/Images/IMG_5638.png" alt="Figma Course">
+                <h4 class="text-lg font-semibold mt-4 ms-2">طراحی با Bootstrap & Sass</h4>
+                <a href="#" class="btn bg-[#0DCAF0] text-white w-4/5 ms-8 p-2 rounded-lg flex items-center mt-4 justify-center">خرید</a>
+                
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2 mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" fill="currentColor"><path d="M237.28 97.87A14.18 14.18 0 0 0 224.76 88l-60.25-4.87l-23.22-56.2a14.37 14.37 0 0 0-26.58 0L91.49 83.11L31.24 88a14.18 14.18 0 0 0-12.52 9.89A14.43 14.43 0 0 0 23 113.32l46 39.61l-14 59.25a14.4 14.4 0 0 0 5.59 15a14.1 14.1 0 0 0 15.91.6l51.5-31.66l51.58 31.71a14.1 14.1 0 0 0 15.91-.6a14.4 14.4 0 0 0 5.59-15l-14-59.25L233 113.32a14.43 14.43 0 0 0 4.28-15.45m-12.14 6.37l-48.69 42a6 6 0 0 0-1.92 5.92l14.88 62.79a2.35 2.35 0 0 1-.95 2.57a2.24 2.24 0 0 1-2.6.1L131.14 184a6 6 0 0 0-6.28 0l-54.72 33.61a2.24 2.24 0 0 1-2.6-.1a2.35 2.35 0 0 1-1-2.57l14.88-62.79a6 6 0 0 0-1.92-5.92l-48.69-42a2.37 2.37 0 0 1-.73-2.65a2.28 2.28 0 0 1 2.07-1.65l63.92-5.16a6 6 0 0 0 5.06-3.69l24.63-59.6a2.35 2.35 0 0 1 4.38 0l24.63 59.6a6 6 0 0 0 5.06 3.69l63.92 5.16a2.28 2.28 0 0 1 2.07 1.65a2.37 2.37 0 0 1-.68 2.66"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class="bg-[#F7F7F7] w-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300"></div>
+                    <div class="mt-2 flex justify-center p-2">
+                        <p class="text-[#DC3545]">420,000 تومان</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Site book -->
+            <div class="border rounded-lg shadow-md mt-14 w-80" style="height: 350px;">
+                <img class="w-72 h-48 rounded ms-4" style="margin-top: -50px;" src="https://www.rahatyad.ir/Photos/Home/Images/IMG_5639.png" alt="Figma Course">
+                <h4 class="text-lg font-semibold mt-4 ms-2">طراحی حرفه ای وبسایت</h4>
+                <a href="#" class="btn bg-[#0DCAF0] text-white w-4/5 ms-8 p-2 rounded-lg flex items-center mt-4 justify-center">خرید</a>
+                
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2 mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" fill="currentColor"><path d="M237.28 97.87A14.18 14.18 0 0 0 224.76 88l-60.25-4.87l-23.22-56.2a14.37 14.37 0 0 0-26.58 0L91.49 83.11L31.24 88a14.18 14.18 0 0 0-12.52 9.89A14.43 14.43 0 0 0 23 113.32l46 39.61l-14 59.25a14.4 14.4 0 0 0 5.59 15a14.1 14.1 0 0 0 15.91.6l51.5-31.66l51.58 31.71a14.1 14.1 0 0 0 15.91-.6a14.4 14.4 0 0 0 5.59-15l-14-59.25L233 113.32a14.43 14.43 0 0 0 4.28-15.45m-12.14 6.37l-48.69 42a6 6 0 0 0-1.92 5.92l14.88 62.79a2.35 2.35 0 0 1-.95 2.57a2.24 2.24 0 0 1-2.6.1L131.14 184a6 6 0 0 0-6.28 0l-54.72 33.61a2.24 2.24 0 0 1-2.6-.1a2.35 2.35 0 0 1-1-2.57l14.88-62.79a6 6 0 0 0-1.92-5.92l-48.69-42a2.37 2.37 0 0 1-.73-2.65a2.28 2.28 0 0 1 2.07-1.65l63.92-5.16a6 6 0 0 0 5.06-3.69l24.63-59.6a2.35 2.35 0 0 1 4.38 0l24.63 59.6a6 6 0 0 0 5.06 3.69l63.92 5.16a2.28 2.28 0 0 1 2.07 1.65a2.37 2.37 0 0 1-.68 2.66"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class="bg-[#F7F7F7] w-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300"></div>
+                    <div class="mt-2 flex justify-center p-2">
+                        <p class="text-[#DC3545]">280,000 تومان</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Bargh book -->
+            <div class="border rounded-lg shadow-md mt-14 w-80" style="height: 350px;">
+                <img class="w-72 h-48 rounded ms-4" style="margin-top: -50px;" src="https://www.rahatyad.ir/Photos/Home/Images/book_z.jpg?2" alt="Figma Course">
+                <h4 class="text-lg font-semibold mt-4 ms-2">زبان تخصصی برق</h4>
+                <a href="#" class="btn bg-[#0DCAF0] text-white w-4/5 ms-8 p-2 rounded-lg flex items-center mt-4 justify-center">خرید</a>
+                
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2 mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" fill="currentColor"><path d="M237.28 97.87A14.18 14.18 0 0 0 224.76 88l-60.25-4.87l-23.22-56.2a14.37 14.37 0 0 0-26.58 0L91.49 83.11L31.24 88a14.18 14.18 0 0 0-12.52 9.89A14.43 14.43 0 0 0 23 113.32l46 39.61l-14 59.25a14.4 14.4 0 0 0 5.59 15a14.1 14.1 0 0 0 15.91.6l51.5-31.66l51.58 31.71a14.1 14.1 0 0 0 15.91-.6a14.4 14.4 0 0 0 5.59-15l-14-59.25L233 113.32a14.43 14.43 0 0 0 4.28-15.45m-12.14 6.37l-48.69 42a6 6 0 0 0-1.92 5.92l14.88 62.79a2.35 2.35 0 0 1-.95 2.57a2.24 2.24 0 0 1-2.6.1L131.14 184a6 6 0 0 0-6.28 0l-54.72 33.61a2.24 2.24 0 0 1-2.6-.1a2.35 2.35 0 0 1-1-2.57l14.88-62.79a6 6 0 0 0-1.92-5.92l-48.69-42a2.37 2.37 0 0 1-.73-2.65a2.28 2.28 0 0 1 2.07-1.65l63.92-5.16a6 6 0 0 0 5.06-3.69l24.63-59.6a2.35 2.35 0 0 1 4.38 0l24.63 59.6a6 6 0 0 0 5.06 3.69l63.92 5.16a2.28 2.28 0 0 1 2.07 1.65a2.37 2.37 0 0 1-.68 2.66"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class="bg-[#F7F7F7] w-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300"></div>
+                    <div class="mt-2 flex justify-center p-2">
+                        <p class="text-[#DC3545]">200,000 تومان</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Matlab book -->
+            <div class="border rounded-lg shadow-md mt-14 w-80" style="height: 350px;">
+                <img class="w-72 h-48 rounded ms-4" style="margin-top: -50px;" src="https://www.rahatyad.ir/Photos/Home/Images/book_m.jpg?2" alt="Figma Course">
+                <h4 class="text-lg font-semibold mt-4 ms-2">متلب حرفه‌ای به بیانی ساده</h4>
+                <a href="#" class="btn bg-[#0DCAF0] text-white w-4/5 ms-8 p-2 rounded-lg flex items-center mt-4 justify-center">خرید</a>
+                
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2 mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" fill="currentColor"><path d="M237.28 97.87A14.18 14.18 0 0 0 224.76 88l-60.25-4.87l-23.22-56.2a14.37 14.37 0 0 0-26.58 0L91.49 83.11L31.24 88a14.18 14.18 0 0 0-12.52 9.89A14.43 14.43 0 0 0 23 113.32l46 39.61l-14 59.25a14.4 14.4 0 0 0 5.59 15a14.1 14.1 0 0 0 15.91.6l51.5-31.66l51.58 31.71a14.1 14.1 0 0 0 15.91-.6a14.4 14.4 0 0 0 5.59-15l-14-59.25L233 113.32a14.43 14.43 0 0 0 4.28-15.45m-12.14 6.37l-48.69 42a6 6 0 0 0-1.92 5.92l14.88 62.79a2.35 2.35 0 0 1-.95 2.57a2.24 2.24 0 0 1-2.6.1L131.14 184a6 6 0 0 0-6.28 0l-54.72 33.61a2.24 2.24 0 0 1-2.6-.1a2.35 2.35 0 0 1-1-2.57l14.88-62.79a6 6 0 0 0-1.92-5.92l-48.69-42a2.37 2.37 0 0 1-.73-2.65a2.28 2.28 0 0 1 2.07-1.65l63.92-5.16a6 6 0 0 0 5.06-3.69l24.63-59.6a2.35 2.35 0 0 1 4.38 0l24.63 59.6a6 6 0 0 0 5.06 3.69l63.92 5.16a2.28 2.28 0 0 1 2.07 1.65a2.37 2.37 0 0 1-.68 2.66"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class="bg-[#F7F7F7] w-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300"></div>
+                    <div class="mt-2 flex justify-center p-2">
+                        <p class="text-[#DC3545]">250,000 تومان</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Computer book -->
+            <div class="border rounded-lg shadow-md mt-14 w-80" style="height: 350px;">
+                <img class="w-64 h-48 rounded ms-8" style="margin-top: -50px;" src="https://www.rahatyad.ir/Photos/Home/Images/book_c.jpg?2" alt="Figma Course">
+                <h4 class="text-lg font-semibold mt-4 ms-2">مبانی کامپیوتر و اصول برنامه نویسی در c</h4>
+                <a href="#" class="btn bg-[#0DCAF0] text-white w-4/5 ms-8 p-2 rounded-lg flex items-center mt-4 justify-center">خرید</a>
+                
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2 mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" fill="currentColor"><path d="M237.28 97.87A14.18 14.18 0 0 0 224.76 88l-60.25-4.87l-23.22-56.2a14.37 14.37 0 0 0-26.58 0L91.49 83.11L31.24 88a14.18 14.18 0 0 0-12.52 9.89A14.43 14.43 0 0 0 23 113.32l46 39.61l-14 59.25a14.4 14.4 0 0 0 5.59 15a14.1 14.1 0 0 0 15.91.6l51.5-31.66l51.58 31.71a14.1 14.1 0 0 0 15.91-.6a14.4 14.4 0 0 0 5.59-15l-14-59.25L233 113.32a14.43 14.43 0 0 0 4.28-15.45m-12.14 6.37l-48.69 42a6 6 0 0 0-1.92 5.92l14.88 62.79a2.35 2.35 0 0 1-.95 2.57a2.24 2.24 0 0 1-2.6.1L131.14 184a6 6 0 0 0-6.28 0l-54.72 33.61a2.24 2.24 0 0 1-2.6-.1a2.35 2.35 0 0 1-1-2.57l14.88-62.79a6 6 0 0 0-1.92-5.92l-48.69-42a2.37 2.37 0 0 1-.73-2.65a2.28 2.28 0 0 1 2.07-1.65l63.92-5.16a6 6 0 0 0 5.06-3.69l24.63-59.6a2.35 2.35 0 0 1 4.38 0l24.63 59.6a6 6 0 0 0 5.06 3.69l63.92 5.16a2.28 2.28 0 0 1 2.07 1.65a2.37 2.37 0 0 1-.68 2.66"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class="bg-[#F7F7F7] w-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300"></div>
+                    <div class="mt-2 flex justify-center p-2">
+                        <p class="text-[#DC3545]">100,000 تومان</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Python book -->
+            <div class="border rounded-lg shadow-md mt-14 w-80" style="height: 350px;">
+                <img class="w-64 h-48 rounded ms-8" style="margin-top: -50px;" src="https://www.rahatyad.ir/Photos/Home/Images/book_python.jpeg?2" alt="Figma Course">
+                <h4 class="text-lg font-semibold mt-4 ms-2">آموزش تخصصی پایتون</h4>
+                <a href="#" class="btn bg-[#0DCAF0] text-white w-4/5 ms-8 p-2 rounded-lg flex items-center mt-4 justify-center">خرید</a>
+                
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2 mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" fill="currentColor"><path d="M237.28 97.87A14.18 14.18 0 0 0 224.76 88l-60.25-4.87l-23.22-56.2a14.37 14.37 0 0 0-26.58 0L91.49 83.11L31.24 88a14.18 14.18 0 0 0-12.52 9.89A14.43 14.43 0 0 0 23 113.32l46 39.61l-14 59.25a14.4 14.4 0 0 0 5.59 15a14.1 14.1 0 0 0 15.91.6l51.5-31.66l51.58 31.71a14.1 14.1 0 0 0 15.91-.6a14.4 14.4 0 0 0 5.59-15l-14-59.25L233 113.32a14.43 14.43 0 0 0 4.28-15.45m-12.14 6.37l-48.69 42a6 6 0 0 0-1.92 5.92l14.88 62.79a2.35 2.35 0 0 1-.95 2.57a2.24 2.24 0 0 1-2.6.1L131.14 184a6 6 0 0 0-6.28 0l-54.72 33.61a2.24 2.24 0 0 1-2.6-.1a2.35 2.35 0 0 1-1-2.57l14.88-62.79a6 6 0 0 0-1.92-5.92l-48.69-42a2.37 2.37 0 0 1-.73-2.65a2.28 2.28 0 0 1 2.07-1.65l63.92-5.16a6 6 0 0 0 5.06-3.69l24.63-59.6a2.35 2.35 0 0 1 4.38 0l24.63 59.6a6 6 0 0 0 5.06 3.69l63.92 5.16a2.28 2.28 0 0 1 2.07 1.65a2.37 2.37 0 0 1-.68 2.66"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class="bg-[#F7F7F7] w-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300"></div>
+                    <div class="mt-2 flex justify-center p-2">
+                        <p class="text-[#DC3545]">300,000 تومان</p>
+                    </div>
+                </div>
+            </div>
+            <!-- UI/UX book -->
+            <div class="border rounded-lg shadow-md mt-14 w-80" style="height: 350px;">
+                <img class="w-64 h-48 rounded ms-8" style="margin-top: -50px;" src="https://www.rahatyad.ir/Photos/Home/Images/book_ui.png?2" alt="Figma Course">
+                <h4 class="text-lg font-semibold mt-4 ms-2">آموزش طراحی UI/UX</h4>
+                <a href="#" class="btn bg-[#0DCAF0] text-white w-4/5 ms-8 p-2 rounded-lg flex items-center mt-4 justify-center">خرید</a>
+                
+                <!-- Star Ratings -->
+                <div class="flex space-x-1 text-[#FFC107] ms-2 mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" fill="currentColor"><path d="M237.28 97.87A14.18 14.18 0 0 0 224.76 88l-60.25-4.87l-23.22-56.2a14.37 14.37 0 0 0-26.58 0L91.49 83.11L31.24 88a14.18 14.18 0 0 0-12.52 9.89A14.43 14.43 0 0 0 23 113.32l46 39.61l-14 59.25a14.4 14.4 0 0 0 5.59 15a14.1 14.1 0 0 0 15.91.6l51.5-31.66l51.58 31.71a14.1 14.1 0 0 0 15.91-.6a14.4 14.4 0 0 0 5.59-15l-14-59.25L233 113.32a14.43 14.43 0 0 0 4.28-15.45m-12.14 6.37l-48.69 42a6 6 0 0 0-1.92 5.92l14.88 62.79a2.35 2.35 0 0 1-.95 2.57a2.24 2.24 0 0 1-2.6.1L131.14 184a6 6 0 0 0-6.28 0l-54.72 33.61a2.24 2.24 0 0 1-2.6-.1a2.35 2.35 0 0 1-1-2.57l14.88-62.79a6 6 0 0 0-1.92-5.92l-48.69-42a2.37 2.37 0 0 1-.73-2.65a2.28 2.28 0 0 1 2.07-1.65l63.92-5.16a6 6 0 0 0 5.06-3.69l24.63-59.6a2.35 2.35 0 0 1 4.38 0l24.63 59.6a6 6 0 0 0 5.06 3.69l63.92 5.16a2.28 2.28 0 0 1 2.07 1.65a2.37 2.37 0 0 1-.68 2.66"/></svg>
+                </div>
+                <div class="w-full h-px bg-gray-300 mt-2"></div>
+                <div class="bg-[#F7F7F7] w-full rounded-b-lg pt-4">
+                    <div class="w-4/5 ms-10 h-px bg-gray-300"></div>
+                    <div class="mt-2 flex justify-center p-2">
+                        <p class="text-[#DC3545]">200,000 تومان</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="flex mt-8 bg-[#FBFDF4] justify-center">
+        <div class="container mx-auto flex justify-center">
+            <div class="sm:w-12/12 md:w-7/12">
+                <h2 class="font-bold text-3xl">خدمات ما</h2>
+                <h3 class="text-[#00A2E9] mt-8 text-2xl">پروژه های خود را به حرفه ای ها بسپارید</h3>
+                <p class="mt-8">تیم حرفه ای راحت یاد با بیش از ۵ سال سابقه و بیش از ۴۳۰ پروژه با ۹۷ درصد رضایت آماده انجام هر گونه پروژه داخلی و بین المللی است در حوزه های Frontend , Backend , UI UX می باشد</p>
+                <button class="bg-[#ACCE22] mt-4 text-white py-2 px-4 rounded">درخواست پروژه</button>
+            </div>
+            <div class="hidden md:block">
+                <img src="https://www.rahatyad.ir/images/leftPic.png" alt="">
+            </div>
+        </div>
+    </section>
+    
+  
+    
+    <section class="flex mt-5 justify-center">
+        <div class="container mx-auto flex justify-around items-center">
+            <div class="hidden md:block bg-[#FBFDF4]">
+                <img class="p-2 mb-5" src="https://www.rahatyad.ir/images/rahatyad_logo.svg" alt="">
+            </div>
+            <div class="sm:w-12/12 md:w-6/12">
+                <h2 class="font-bold text-3xl">درباره ما</h2>
+                <h3 class="text-[#00A2E9] mt-8 text-2xl">تیم تخصصی راحت یاد</h3>
+                <p class="mt-8">تیم حرفه ای راحت یاد با بیش از ۵ سال سابقه و بیش از ۴۳۰ پروژه با ۹۷ درصد رضایت آماده انجام هر گونه پروژه داخلی و بین المللی است در حوزه های Frontend , Backend , UI UX می باشد</p> 
+                <button class="bg-[#00A2E9] mt-4 text-white py-2 px-4 rounded">عضو می شوم</button>
+            </div>
+        </div>
+    </section>
+    
+ </main>
+   
+   <footer>
+         <!-- Top footer -->
+         <section class="bg-[#00A2E9] rounded-b-full mt-4" style="width: 100%; height: 90px;">
+            <nav class="flex justify-center">
+                <ul class="list-unstyled flex gap-3 mt-2">
+                    <li><a class="text-decoration-none list-unstyled text-white" href="">صفحه نخست</a></li>
+                    <li><a class="text-decoration-none list-unstyled text-white" href="">پروژه</a></li>
+                    <li><a class="text-decoration-none list-unstyled text-white" href="">دوره ها</a></li>
+                    <li><a class="text-decoration-none list-unstyled text-white" href="">بلاگ</a></li>
+                    <li><a class="text-decoration-none list-unstyled text-white" href="">درباره ما</a></li>
+                </ul>
+            </nav>
+            <form action="submit" class="flex justify-center mt-8" >
+                <input class="border-1 rounded-s-md" style="width: 600px;" type="text" placeholder="ایمیل شما در جهت عضویت در خبرنامه راحت یاد:">
+                <button class="btn bg-[#ACCE22] px-3 rounded-e-md text-white">ثبت ایمیل</button>
+            </form>
+        </section>
+        
+      
+        <!-- middle footer -->
+        <section class="mt-10">
+            <section class="flex justify-around mt-5 hidden md:flex">
+                <p class="font-bold text-[#00A2EA]">درباره راحت یاد</p>
+                <p class="font-bold text-[#00A2EA]">مشاوره رایگان</p>
+                <p class="font-bold text-[#00A2EA]">راه های ارتباطی</p>
+            </section>
+      
+              <section class="mt-8 hidden md:block">
+                  <div class="flex bg-[#E5F6FD] gap-3 ms-4 p-2 rounded-lg" style="width: 500px;">
+                      <img class="bg-white rounded-lg" style="width: 100px;" src="https://www.rahatyad.ir/images/rahatyad_logo.svg" alt="">
+                      <p  style="width: 400px;" class="text-[#342F29] text-sm mt-4">
+                          تیم حرفه ای راحت یاد
+                          با بیش از ۵ سال سابقه و بیش از ۴۳۰ پروژه با ۹۷ درصد رضایت آماده انجام هر گونه پروژه داخلی و بین المللی در حوزه های Frontend , Backend , UI UX می باشد</p>
+                  </div>
+                  <hr style="width: 500px;" class="ms-3 mt-2">
+                  <p class=" text-[#00A2EA] font-bold ms-3 mt-4" style="font-size: 15px;">به زودی</p>
+                   <div class="flex">
+                      <div class="flex bg-[#E5F6FD] gap-3 ms-3 mt-4 rounded-lg w-60 py-2">
+                          <img  class="rounded-lg" style="width: 100px; height: 80px;" src="https://www.rahatyad.ir/images/12.png" alt="">
+                       <div class="flex-column">
+                        <div class="bg-[#ACCE22] px-8 rounded-3xl text-white">   پروژه ها</div>
+                        <P style="width: 80px;">
+                            دوره php
+                            
+                            استاد امینی</P>
+                       </div>
+                      </div>
+                      <div class="flex bg-[#E5F6FD] gap-3 ms-3 mt-4 rounded-lg w-60 py-2">
+                        <img  class="rounded-lg" style="width: 100px; height: 80px;" src="https://www.rahatyad.ir/images/13.png" alt="">
+                     <div class="flex-column">
+                      <div class="bg-[#ACCE22] px-8 rounded-3xl text-white">   پروژه ها</div>
+                      <P style="width: 80px;">
+                          دوره php
+                          
+                          استاد امینی</P>
+                     </div>
+                    </div>
+                   </div>
+              </section>
+           
+              <section class="justify-center hidden md:flex" style="margin-top: -285px; margin-right: 90px;">
+                <form class="w-full max-w-md bg-[#E5F6FD] p-4 rounded-lg">
+                    <div class="mb-5">
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
+                        <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ایمیل خود را وارد کنید" required />
+                    </div>
+                    <div class="mb-5">
+                        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
+                        <input type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="شماره تماس" required />
+                    </div>
+                    <div class="mb-5">
+                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
+                        <input type="text" id="message" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="پیام شما" required />
+                    </div>
+                    <button type="submit" class="text-white bg-[#ACCE22] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">ارسال</button>
+                </form>
+            </section>
+            
+
+                  <section class=" gap-3 justify-end me-8 hidden md:flex" style="margin-top: -300px;">
+                      <div class=" w-40  flex bg-[#F7FAE8] gap-3 rounded-lg">
+                          <div class="rounded-lg bg-[#ACCE22] p-2">
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#fff" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23c-1.48 0-2.93-.39-4.19-1.15l-.3-.17l-3.12.82l.83-3.04l-.2-.32a8.2 8.2 0 0 1-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24M8.53 7.33c-.16 0-.43.06-.66.31c-.22.25-.87.86-.87 2.07c0 1.22.89 2.39 1 2.56c.14.17 1.76 2.67 4.25 3.73c.59.27 1.05.42 1.41.53c.59.19 1.13.16 1.56.1c.48-.07 1.46-.6 1.67-1.18s.21-1.07.15-1.18c-.07-.1-.23-.16-.48-.27c-.25-.14-1.47-.74-1.69-.82c-.23-.08-.37-.12-.56.12c-.16.25-.64.81-.78.97c-.15.17-.29.19-.53.07c-.26-.13-1.06-.39-2-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.12-.24-.01-.39.11-.5c.11-.11.27-.29.37-.44c.13-.14.17-.25.25-.41c.08-.17.04-.31-.02-.43c-.06-.11-.56-1.35-.77-1.84c-.2-.48-.4-.42-.56-.43c-.14 0-.3-.01-.47-.01"/></svg>
+                          </div>
+                          <p class="text-xs mt-2">واتساپ</p>
+                      </div>
+  
+                      <div class=" w-40  flex bg-[#F7FAE8] gap-3 rounded-lg">
+                         <div class="rounded-lg bg-[#ACCE22] p-2">
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#fff" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19c-.14.75-.42 1-.68 1.03c-.58.05-1.02-.38-1.58-.75c-.88-.58-1.38-.94-2.23-1.5c-.99-.65-.35-1.01.22-1.59c.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02c-.09.02-1.49.95-4.22 2.79c-.4.27-.76.41-1.08.4c-.36-.01-1.04-.2-1.55-.37c-.63-.2-1.12-.31-1.08-.66c.02-.18.27-.36.74-.55c2.92-1.27 4.86-2.11 5.83-2.51c2.78-1.16 3.35-1.36 3.73-1.36c.08 0 .27.02.39.12c.1.08.13.19.14.27c-.01.06.01.24 0 .38"/></svg>
+                         </div>
+                          <p class="text-xs mt-2">تلگرام</p>
+                      </div>
+                  </section>
+  
+                  <section class=" gap-3 justify-end me-8 hidden md:flex" style="margin-top:30px;">
+                      <div class=" w-40  flex bg-[#F7FAE8] gap-3 rounded-lg">
+                         <div class="rounded-lg bg-[#ACCE22] p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="#ef14ff"><path d="M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12"/><path d="M16.5 12a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m1.008-5.5h-.01"/></g></svg>
+                         </div>
+                          <p class="text-xs mt-2">اینستا</p>
+                      </div>
+
+                    <div class="w-40 flex bg-[#F7FAE8] gap-3 rounded-lg">
+                      <div class="rounded-lg bg-[#ACCE22] p-2">
+                        <svg  xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#fff" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 5l-8-5zm0 12H4V8l8 5l8-5z"/></svg>
+                      </div>
+                      <p class="text-xs mt-2">ایمیل</p>
+                  </div>
+                  </section>
+
+              <section class=" justify-end hidden md:flex" style="margin-top: 70px;" >
+                  <div class="flex bg-[#E5F6FD]" style="margin-left: 90px;">
+                      <div class="flex bg-info1 gap-3 ms-3 p-2 rounded-2">
+                          <img  class="bg-white rounded-2" style="width: 100px; height: 100px;" src="https://www.rahatyad.ir/images/namad.png" alt="">
+                      </div>
+
+                      <div class="flex bg-info1 gap-3 p-2 rounded-2">
+                          <img class="bg-white rounded-2" style="width: 100px; height: 100px;" src="https://www.rahatyad.ir/images/samandehi.png" alt="">
+                      </div>
+                   </div>
+              </section>
+        
+        </section>
+
+          <!-- Bottom footer -->
+          <section class="mt-5 bg-[#ACCE22] p-8 items-center">
+            <!-- Left aligned a tag -->
+            <div>
+              <a id="bottom" href="#top"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 8 8">
+                  <path fill="#0505f5" d="M3.97 0L1 3h2v5h2V3h2z"/>
+                </svg>       
+              </a>
+            </div>
+            
+            <!-- Center aligned text -->
+            <div class="flex justify-center gap-2">
+              <h6 class="text-white text-xs">© کلیه حقوق محتوای سایت متعلق به</h6>
+              <h6 class="text-xs text-[#00A2EA]">راحت یاد</h6>
+              <h6 class="text-white text-xs">است</h6>
+            </div>
+          </section>
+          
+   </footer>
+
+    <script src="../node_modules/flowbite/dist/flowbite.min.js" defer></script>
+    <script src="./main.js" defer></script>
+</body>
+</html>
+

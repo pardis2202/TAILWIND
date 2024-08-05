@@ -1,0 +1,9 @@
+@font-face{
+    font-family: vazir;
+    src: url('./Vazir-Medium.woff2')
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'flowbite';
